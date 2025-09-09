@@ -1,0 +1,20 @@
+{
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": false,
+  "bracketSpacing": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^react|next|@emotion/react|@emotion/styled|dayjs|axios|jquery|@testing-library|@tanstack/react-query|<THIRD_PARTY_MODULES>|next(.*)",
+    "^components|pages|Router/(.*)",
+    "^[./]",
+    "^api(.*)",
+    "^hooks/(.*)",
+    "^types/(.*)",
+    "^assets/(.*)",
+    "^helpers/(.*)",
+    "(.*)"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

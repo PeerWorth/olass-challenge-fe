@@ -3,9 +3,8 @@
 - 사회초년생이 자산관리를 재미있는 습관 형성의 여정으로 받아들일 수 있도록 돕는 동기부여 서비스
 - 유저는 매주 주어지는 작고 구체적인 미션을 수행하고 인증하면서, 자연스럽게 자산관리 행동을 실천하고 습관을 형성
 - Olass는 도전의식과 성취감을 지속적으로 제공하여, 자산관리를 시작하지 못했던 사용자도 행동을 이어갈 수 있도록 유도
-
----
-
+<br/>
+<br/>
 # 사용 스택
 
 - **Framework**: Next.js 15 (App Router)
@@ -14,9 +13,8 @@
 - **Data Fetching**: TanStack Query + Axios
 - **Styling**: Tailwind CSS V4, Emotion
 - **Architecture**: FSD (Feature-Sliced Design)
-
----
-
+<br/>
+<br/>
 # 프로젝트 폴더 구조
 
 이 프로젝트는 **Feature-Sliced Design (FSD)** 아키텍처와 **Next.js App Router**를 함께 사용하여 최적의 코드 구조와 라우팅을 제공

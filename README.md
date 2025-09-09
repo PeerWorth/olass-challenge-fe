@@ -5,6 +5,7 @@
 - Olass는 도전의식과 성취감을 지속적으로 제공하여, 자산관리를 시작하지 못했던 사용자도 행동을 이어갈 수 있도록 유도
 <br/>
 <br/>
+
 # 사용 스택
 
 - **Framework**: Next.js 15 (App Router)
@@ -15,6 +16,7 @@
 - **Architecture**: FSD (Feature-Sliced Design)
 <br/>
 <br/>
+
 # 프로젝트 폴더 구조
 
 이 프로젝트는 **Feature-Sliced Design (FSD)** 아키텍처와 **Next.js App Router**를 함께 사용하여 최적의 코드 구조와 라우팅을 제공

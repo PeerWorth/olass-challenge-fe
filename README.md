@@ -14,7 +14,8 @@ app/ # Next.js App Router (라우팅)
 
 src/ # FSD 구조
 ├── app/ # 앱 레벨 설정 (프로바이더, 설정, 초기화)
-├── pages/ # 페이지 컴포넌트들 (Pages Layer)
+├── views/ # 페이지 컴포넌트들 (Pages Layer) 
+|    - Next.js의 page router와 충돌하기 때문에 views로 수정
 ├── widgets/ # 위젯들 (Widgets Layer)
 ├── features/ # 기능들 (Features Layer)
 ├── entities/ # 엔티티들 (Entities Layer)
@@ -27,7 +28,7 @@ src/ # FSD 구조
 | --------------- | ------------------- | ----------------------------------- |
 | `app/`          | **Next.js 라우팅**  | 폴더 구조 = URL 구조, 라우팅만 담당 |
 | `src/app/`      | **FSD 앱 레벨**     | 프로바이더, 설정, 초기화 로직       |
-| `src/pages/`    | **페이지 컴포넌트** | 실제 페이지 UI 로직                 |
+| `src/views/`    | **페이지 컴포넌트** | 실제 페이지 UI 로직                 |
 | `src/widgets/`  | **위젯**            | 페이지를 구성하는 큰 블록들         |
 | `src/features/` | **기능**            | 비즈니스 기능 단위                  |
 | `src/entities/` | **엔티티**          | 비즈니스 엔티티                     |

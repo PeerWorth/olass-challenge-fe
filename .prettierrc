@@ -3,17 +3,20 @@
   "semi": true,
   "singleQuote": false,
   "bracketSpacing": true,
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
   "importOrder": [
     "^react|next|@emotion/react|@emotion/styled|dayjs|axios|jquery|@testing-library|@tanstack/react-query|<THIRD_PARTY_MODULES>|next(.*)",
     "^components|pages|Router/(.*)",
-    "^[./]",
-    "^api(.*)",
-    "^hooks/(.*)",
-    "^types/(.*)",
-    "^assets/(.*)",
-    "^helpers/(.*)",
-    "(.*)"
+    "^@/app/(.*)",
+    "^@/views/(.*)",
+    "^@/widgets/(.*)",
+    "^@/features/(.*)",
+    "^@/entities/(.*)",
+    "^@/shared/(.*)",
+    "^[./]"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

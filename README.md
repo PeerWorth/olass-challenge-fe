@@ -1,6 +1,26 @@
+# Olass
+
+- 사회초년생이 자산관리를 재미있는 습관 형성의 여정으로 받아들일 수 있도록 돕는 동기부여 서비스
+- 유저는 매주 주어지는 작고 구체적인 미션을 수행하고 인증하면서, 자연스럽게 자산관리 행동을 실천하고 습관을 형성
+- Olass는 도전의식과 성취감을 지속적으로 제공하여, 자산관리를 시작하지 못했던 사용자도 행동을 이어갈 수 있도록 유도
+<br/>
+<br/>
+
+# 사용 스택
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Package Manager**: pnpm
+- **Data Fetching**: TanStack Query + Axios
+- **Styling**: Tailwind CSS V4, Emotion
+- **Architecture**: FSD (Feature-Sliced Design)
+<br/>
+<br/>
+
 # 프로젝트 폴더 구조
 
 이 프로젝트는 **Feature-Sliced Design (FSD)** 아키텍처와 **Next.js App Router**를 함께 사용하여 최적의 코드 구조와 라우팅을 제공
+
 ## 프로젝트 구조
 
 ```markdown
@@ -14,7 +34,8 @@ app/ # Next.js App Router (라우팅)
 
 src/ # FSD 구조
 ├── app/ # 앱 레벨 설정 (프로바이더, 설정, 초기화)
-├── pages/ # 페이지 컴포넌트들 (Pages Layer)
+├── views/ # 페이지 컴포넌트들 (Pages Layer)
+| - Next.js의 page router와 충돌하기 때문에 views로 수정
 ├── widgets/ # 위젯들 (Widgets Layer)
 ├── features/ # 기능들 (Features Layer)
 ├── entities/ # 엔티티들 (Entities Layer)
@@ -27,7 +48,7 @@ src/ # FSD 구조
 | --------------- | ------------------- | ----------------------------------- |
 | `app/`          | **Next.js 라우팅**  | 폴더 구조 = URL 구조, 라우팅만 담당 |
 | `src/app/`      | **FSD 앱 레벨**     | 프로바이더, 설정, 초기화 로직       |
-| `src/pages/`    | **페이지 컴포넌트** | 실제 페이지 UI 로직                 |
+| `src/views/`    | **페이지 컴포넌트** | 실제 페이지 UI 로직                 |
 | `src/widgets/`  | **위젯**            | 페이지를 구성하는 큰 블록들         |
 | `src/features/` | **기능**            | 비즈니스 기능 단위                  |
 | `src/entities/` | **엔티티**          | 비즈니스 엔티티                     |
@@ -80,10 +101,8 @@ export function AboutPage() {
 - ✅ **코드 재사용성**: 위젯과 피처 재사용 가능
 - ✅ **타입 안전성**: TypeScript와 완벽 호환
 
-
 ## 학습 자료
 
 - [Next.js 문서](https://nextjs.org/docs) - Next.js 기능과 API 학습
 - [Next.js 학습](https://nextjs.org/learn) - 인터랙티브 Next.js 튜토리얼
 - [Feature-Sliced Design](https://feature-sliced.design/) - FSD 아키텍처 학습
-

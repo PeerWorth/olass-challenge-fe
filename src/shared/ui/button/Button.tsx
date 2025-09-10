@@ -22,6 +22,7 @@ const BUTTON_SIZES = {
 const BUTTON_VARIANTS = {
   primary: theme.colors.primary500,
   secondary: theme.colors.coolNeutral900,
+  tertiary: theme.colors.coolNeutral25,
 };
 
 const createTypographyComponent = (size: "large" | "medium") => {
@@ -40,20 +41,26 @@ const Button = (props: ButtonProps) => {
     $size = "medium",
     $variant = "primary",
     $rounded,
+    disabled,
     ...rest
   } = props;
 
   const TypographyComponent = createTypographyComponent($size);
-
+  const textColor = () => {
+    if (disabled) return "text-coolNeutral200";
+    if ($variant === "tertiary") return "text-common";
+    return "text-common100";
+  };
   return (
     <CustomButton
       $size={$size}
       $variant={$variant}
       $rounded={$rounded}
+      disabled={disabled}
       {...rest}
     >
       {children || (
-        <TypographyComponent className="text-common100 font-semibold">
+        <TypographyComponent className={`${textColor()} font-semibold`}>
           {text}
         </TypographyComponent>
       )}
@@ -65,7 +72,8 @@ const CustomButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ $variant = "primary" }) => BUTTON_VARIANTS[$variant]};
+  background-color: ${({ $variant = "primary", disabled }) =>
+    disabled ? theme.colors.coolNeutral25 : BUTTON_VARIANTS[$variant]};
   ${({ $size = "medium" }) => BUTTON_SIZES[$size]}
   ${({ $rounded }) => $rounded && "border-radius: 100px;"}
   &:hover {

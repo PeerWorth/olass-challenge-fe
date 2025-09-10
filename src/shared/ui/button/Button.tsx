@@ -76,15 +76,18 @@ const CustomButton = styled.button<ButtonProps>`
   justify-content: center;
   ${({ $size = "medium" }) => BUTTON_SIZES[$size]}
   ${({ $rounded }) => $rounded && "border-radius: 100px;"}
-  ${({ $variant, $color = "primary" }) => css`
+  ${({ $variant, $color = "primary", disabled }) => css`
     ${$variant === "solid" &&
     css`
-      background-color: ${BUTTON_COLORS[$color]};
+      background-color: ${disabled
+        ? theme.colors.coolNeutral25
+        : BUTTON_COLORS[$color]};
     `}
 
     ${$variant === "outlined" &&
     css`
-      border: 1px solid ${BUTTON_COLORS[$color]};
+      border: 1px solid
+        ${disabled ? theme.colors.coolNeutral25 : BUTTON_COLORS[$color]};
       background-color: ${theme.colors.common100};
     `}
   `}

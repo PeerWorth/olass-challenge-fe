@@ -6,14 +6,8 @@ import styled from "@emotion/styled";
 import { theme } from "@/shared/styles";
 
 import { Body1, Body2 } from "../typography/Body";
+import { BUTTON_COLORS } from "./constants";
 import ButtonProps from "./type";
-
-const BUTTON_COLORS = {
-  primary: theme.colors.primary500,
-  secondary: theme.colors.common00,
-  tertiary: theme.colors.coolNeutral25,
-  danger: theme.colors.alert,
-};
 
 const BUTTON_SIZES = {
   large: css`

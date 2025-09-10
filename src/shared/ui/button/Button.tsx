@@ -8,6 +8,13 @@ import { theme } from "@/shared/styles";
 import { Body1, Body2 } from "../typography/Body";
 import ButtonProps from "./type";
 
+const BUTTON_COLORS = {
+  primary: theme.colors.primary500,
+  secondary: theme.colors.common00,
+  tertiary: theme.colors.coolNeutral25,
+  danger: theme.colors.alert,
+};
+
 const BUTTON_SIZES = {
   large: css`
     padding: 12px 28px;
@@ -17,11 +24,6 @@ const BUTTON_SIZES = {
     padding: 9px 20px;
     border-radius: 10px;
   `,
-};
-
-const BUTTON_VARIANTS = {
-  primary: theme.colors.primary500,
-  secondary: theme.colors.coolNeutral900,
 };
 
 const createTypographyComponent = (size: "large" | "medium") => {
@@ -38,22 +40,35 @@ const Button = (props: ButtonProps) => {
     text,
     children,
     $size = "medium",
-    $variant = "primary",
+    $variant = "solid",
+    $color = "primary",
     $rounded,
+    $fullWidth,
+    disabled,
     ...rest
   } = props;
 
   const TypographyComponent = createTypographyComponent($size);
 
+  const getTextColor = () => {
+    if (disabled) return "text-coolNeutral200";
+    if ($color === "secondary" || $variant === "outlined")
+      return "text-common00";
+    return "text-common100";
+  };
+
   return (
     <CustomButton
       $size={$size}
-      $variant={$variant}
       $rounded={$rounded}
+      $variant={$variant}
+      $color={$color}
+      $fullWidth={$fullWidth}
+      disabled={disabled}
       {...rest}
     >
       {children || (
-        <TypographyComponent className="text-common100 font-semibold">
+        <TypographyComponent className={`font-semibold ${getTextColor()}`}>
           {text}
         </TypographyComponent>
       )}
@@ -65,9 +80,21 @@ const CustomButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ $variant = "primary" }) => BUTTON_VARIANTS[$variant]};
   ${({ $size = "medium" }) => BUTTON_SIZES[$size]}
   ${({ $rounded }) => $rounded && "border-radius: 100px;"}
+  ${({ $variant, $color = "primary" }) => css`
+    ${$variant === "solid" &&
+    css`
+      background-color: ${BUTTON_COLORS[$color]};
+    `}
+
+    ${$variant === "outlined" &&
+    css`
+      border: 1px solid ${BUTTON_COLORS[$color]};
+      background-color: ${theme.colors.common100};
+    `}
+  `}
+  ${({ $fullWidth }) => $fullWidth && "width: 100%;"}
   &:hover {
     cursor: pointer;
   }

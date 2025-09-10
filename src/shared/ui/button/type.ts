@@ -1,5 +1,7 @@
+import { BUTTON_COLORS } from "./constants";
+
 export type ButtonVariant = "solid" | "outlined";
-export type ButtonColor = "primary" | "secondary" | "tertiary" | "danger";
+export type ButtonColor = keyof typeof BUTTON_COLORS;
 export interface BaseButtonProps {
   $size?: "large" | "medium";
   $variant?: ButtonVariant;

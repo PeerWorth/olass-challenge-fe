@@ -12,7 +12,7 @@
 - **Language**: TypeScript
 - **Package Manager**: pnpm
 - **Data Fetching**: TanStack Query + Axios
-- **Styling**: Tailwind CSS V4, Emotion
+- **Styling**: Tailwind CSS V4, Class Variance Authority (CVA)
 - **Architecture**: FSD (Feature-Sliced Design)
 <br/>
 <br/>

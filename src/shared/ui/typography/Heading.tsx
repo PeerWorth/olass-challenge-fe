@@ -1,21 +1,44 @@
 "use client";
 
-import styled from "@emotion/styled";
+import React from "react";
 
-const Heading = styled.p`
-  font-weight: 700;
-`;
+import { cn } from "@/shared/utils";
 
-const Heading1 = styled(Heading)`
-  font-size: 22px;
-  line-height: 30px;
-  letter-spacing: -0.0194em;
-`;
+interface HeadingProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
+}
 
-const Heading2 = styled(Heading)`
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: -0.012em;
-`;
+const Heading = ({ className, children, ...props }: HeadingProps) => {
+  return (
+    <p className={cn("font-bold", className)} {...props}>
+      {children}
+    </p>
+  );
+};
+
+const Heading1 = ({ className, children, ...props }: HeadingProps) => {
+  return (
+    <Heading
+      className={cn(
+        "text-[22px] leading-[30px] tracking-[-0.0194em]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Heading>
+  );
+};
+
+const Heading2 = ({ className, children, ...props }: HeadingProps) => {
+  return (
+    <Heading
+      className={cn("text-xl leading-7 tracking-[-0.012em]", className)}
+      {...props}
+    >
+      {children}
+    </Heading>
+  );
+};
 
 export { Heading1, Heading2 };

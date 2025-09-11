@@ -1,21 +1,41 @@
 "use client";
 
-import styled from "@emotion/styled";
+import React from "react";
 
-const Body = styled.p`
-  font-weight: 700;
-`;
+import { cn } from "@/shared/utils";
 
-const Body1 = styled(Body)`
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.0057em;
-`;
+interface BodyProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
+}
 
-const Body2 = styled(Body)`
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: 0.0096em;
-`;
+const Body = ({ className, children, ...props }: BodyProps) => {
+  return (
+    <p className={cn("font-bold", className)} {...props}>
+      {children}
+    </p>
+  );
+};
+
+const Body1 = ({ className, children, ...props }: BodyProps) => {
+  return (
+    <Body
+      className={cn("text-base leading-6 tracking-[0.0057em]", className)}
+      {...props}
+    >
+      {children}
+    </Body>
+  );
+};
+
+const Body2 = ({ className, children, ...props }: BodyProps) => {
+  return (
+    <Body
+      className={cn("text-[15px] leading-5 tracking-[0.0096em]", className)}
+      {...props}
+    >
+      {children}
+    </Body>
+  );
+};
 
 export { Body1, Body2 };

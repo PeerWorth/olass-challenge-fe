@@ -1,30 +1,12 @@
 "use client";
 
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import React from "react";
 
-import { theme } from "@/shared/styles";
+import { cn } from "@/shared/utils";
 
 import { Body1, Body2 } from "../typography/Body";
+import ButtonVariants from "./ButtonVariants";
 import ButtonProps from "./type";
-
-const BUTTON_COLORS = {
-  primary: theme.colors.primary500,
-  secondary: theme.colors.common00,
-  tertiary: theme.colors.coolNeutral25,
-  danger: theme.colors.alert,
-};
-
-const BUTTON_SIZES = {
-  large: css`
-    padding: 12px 28px;
-    border-radius: 12px;
-  `,
-  medium: css`
-    padding: 9px 20px;
-    border-radius: 10px;
-  `,
-};
 
 const createTypographyComponent = (size: "large" | "medium") => {
   const typographyMap = {
@@ -39,65 +21,36 @@ const Button = (props: ButtonProps) => {
   const {
     text,
     children,
-    $size = "medium",
-    $variant = "solid",
-    $color = "primary",
-    $rounded,
-    $fullWidth,
+    size = "medium",
+    variant,
+    color,
+    rounded,
+    isFullWidth,
     disabled,
+    className,
     ...rest
   } = props;
 
-  const TypographyComponent = createTypographyComponent($size);
-
-  const getTextColor = () => {
-    if (disabled) return "text-coolNeutral200";
-    if ($color === "secondary" || $variant === "outlined")
-      return "text-common00";
-    return "text-common100";
-  };
+  const TypographyComponent = createTypographyComponent(size);
 
   return (
-    <CustomButton
-      $size={$size}
-      $rounded={$rounded}
-      $variant={$variant}
-      $color={$color}
-      $fullWidth={$fullWidth}
+    <button
+      className={cn(
+        ButtonVariants({ size, variant, disabled, color }),
+        rounded && "rounded-full",
+        isFullWidth && "w-full",
+        className,
+      )}
       disabled={disabled}
       {...rest}
     >
       {children || (
-        <TypographyComponent className={`font-semibold ${getTextColor()}`}>
+        <TypographyComponent className={cn("font-semibold")}>
           {text}
         </TypographyComponent>
       )}
-    </CustomButton>
+    </button>
   );
 };
 
-const CustomButton = styled.button<ButtonProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ${({ $size = "medium" }) => BUTTON_SIZES[$size]}
-  ${({ $rounded }) => $rounded && "border-radius: 100px;"}
-  ${({ $variant, $color = "primary" }) => css`
-    ${$variant === "solid" &&
-    css`
-      background-color: ${BUTTON_COLORS[$color]};
-    `}
-
-    ${$variant === "outlined" &&
-    css`
-      border: 1px solid ${BUTTON_COLORS[$color]};
-      background-color: ${theme.colors.common100};
-    `}
-  `}
-  ${({ $fullWidth }) => $fullWidth && "width: 100%;"}
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export default Button;
+export default React.memo(Button);

@@ -1,27 +1,58 @@
 "use client";
 
-import styled from "@emotion/styled";
+import React from "react";
 
-const Title = styled.p`
-  font-weight: 700;
-`;
+import { cn } from "@/shared/utils";
 
-const Title1 = styled(Title)`
-  font-size: 36px;
-  line-height: 48px;
-  letter-spacing: -0.027em;
-`;
+interface TitleProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
+}
 
-const Title2 = styled(Title)`
-  font-size: 28px;
-  line-height: 38px;
-  letter-spacing: -0.0236em;
-`;
+const Title = ({ className, children, ...props }: TitleProps) => {
+  return (
+    <p className={cn("font-bold", className)} {...props}>
+      {children}
+    </p>
+  );
+};
 
-const Title3 = styled(Title)`
-  font-size: 24px;
-  line-height: 32px;
-  letter-spacing: -0.023em;
-`;
+const Title1 = ({ className, children, ...props }: TitleProps) => {
+  return (
+    <Title
+      className={cn(
+        "text-[36px] leading-[48px] tracking-[-0.027em]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Title>
+  );
+};
+
+const Title2 = ({ className, children, ...props }: TitleProps) => {
+  return (
+    <Title
+      className={cn(
+        "text-[28px] leading-[38px] tracking-[-0.0236em]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Title>
+  );
+};
+
+const Title3 = ({ className, children, ...props }: TitleProps) => {
+  return (
+    <Title
+      className={cn("text-2xl leading-8 tracking-[-0.023em]", className)}
+      {...props}
+    >
+      {children}
+    </Title>
+  );
+};
 
 export { Title1, Title2, Title3 };

@@ -1,20 +1,38 @@
 "use client";
 
-import styled from "@emotion/styled";
+import React from "react";
 
-const Headline = styled.p`
-  font-weight: 700;
-`;
+import { cn } from "@/shared/utils";
 
-const Headline1 = styled(Headline)`
-  font-size: 18px;
-  line-height: 26px;
-  letter-spacing: -0.0002em;
-`;
+interface HeadlineProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
+}
 
-const Headline2 = styled(Headline)`
-  font-size: 17px;
-  line-height: 24px;
-`;
+const Headline = ({ className, children, ...props }: HeadlineProps) => {
+  return (
+    <p className={cn("font-bold", className)} {...props}>
+      {children}
+    </p>
+  );
+};
+
+const Headline1 = ({ className, children, ...props }: HeadlineProps) => {
+  return (
+    <Headline
+      className={cn("text-lg leading-[26px] tracking-[-0.0002em]", className)}
+      {...props}
+    >
+      {children}
+    </Headline>
+  );
+};
+
+const Headline2 = ({ className, children, ...props }: HeadlineProps) => {
+  return (
+    <Headline className={cn("text-[17px] leading-6", className)} {...props}>
+      {children}
+    </Headline>
+  );
+};
 
 export { Headline1, Headline2 };

@@ -1,19 +1,47 @@
 "use client";
 
-import styled from "@emotion/styled";
+import React from "react";
 
-const Label1 = styled.p`
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.0145em;
-  font-weight: 500;
-`;
+import { cn } from "@/shared/utils";
 
-const Label2 = styled.p`
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: 0.0194em;
-  font-weight: 700;
-`;
+interface LabelProps extends React.HTMLAttributes<HTMLParagraphElement> {
+  children: React.ReactNode;
+}
+
+const Label = ({ className, children, ...props }: LabelProps) => {
+  return (
+    <p className={cn("", className)} {...props}>
+      {children}
+    </p>
+  );
+};
+
+const Label1 = ({ className, children, ...props }: LabelProps) => {
+  return (
+    <Label
+      className={cn(
+        "text-sm leading-5 font-medium tracking-[0.0145em]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Label>
+  );
+};
+
+const Label2 = ({ className, children, ...props }: LabelProps) => {
+  return (
+    <Label
+      className={cn(
+        "text-[13px] leading-[18px] font-bold tracking-[0.0194em]",
+        className,
+      )}
+      {...props}
+    >
+      {children}
+    </Label>
+  );
+};
 
 export { Label1, Label2 };

@@ -1,12 +1,12 @@
 export type ButtonVariant = "solid" | "outlined";
 export type ButtonColor = "primary" | "secondary" | "tertiary" | "danger";
 export interface BaseButtonProps {
-  $size?: "large" | "medium";
-  $variant?: ButtonVariant;
-  $rounded?: boolean;
-  $color?: ButtonColor;
+  size?: "large" | "medium";
+  variant?: ButtonVariant;
+  rounded?: boolean;
+  color?: ButtonColor;
   disabled?: boolean;
-  $fullWidth?: boolean;
+  isFullWidth?: boolean;
 }
 
 type ButtonProps = BaseButtonProps &

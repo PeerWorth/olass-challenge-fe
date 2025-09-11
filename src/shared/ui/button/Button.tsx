@@ -1,3 +1,7 @@
+"use client";
+
+import React from "react";
+
 import { cn } from "@/shared/utils";
 
 import { Body1, Body2 } from "../typography/Body";
@@ -49,4 +53,4 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-export default Button;
+export default React.memo(Button);

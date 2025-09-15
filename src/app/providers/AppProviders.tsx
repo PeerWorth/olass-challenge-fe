@@ -1,5 +1,7 @@
+import QueryProvider from "./QueryProvider";
+
 const AppProviders = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>;
+  return <QueryProvider>{children}</QueryProvider>;
 };
 
 export default AppProviders;

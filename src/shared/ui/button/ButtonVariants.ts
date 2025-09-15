@@ -7,6 +7,7 @@ const ButtonVariants = cva(
       size: {
         large: ["px-7", "py-3", "rounded-xl"],
         medium: ["px-5", "py-2.5", "rounded-[10px]"],
+        fullWidth: ["w-full", "py-4", "rounded-full"],
       },
       variant: {
         solid: "text-common100",

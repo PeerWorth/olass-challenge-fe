@@ -8,7 +8,7 @@
     "prettier-plugin-tailwindcss"
   ],
   "importOrder": [
-    "^react|next|@emotion/react|@emotion/styled|dayjs|axios|jquery|@testing-library|@tanstack/react-query|<THIRD_PARTY_MODULES>|next(.*)",
+    "^react|next|axios|<THIRD_PARTY_MODULES>|next(.*)",
     "^components|pages|Router/(.*)",
     "^@/app/(.*)",
     "^@/views/(.*)",

@@ -6,11 +6,12 @@ import { cn } from "@/shared/utils";
 
 import { Body1, Body2 } from "../typography/Body";
 import ButtonVariants from "./ButtonVariants";
-import ButtonProps from "./type";
+import ButtonProps, { ButtonSize } from "./type";
 
-const createTypographyComponent = (size: "large" | "medium") => {
+const createTypographyComponent = (size: ButtonSize) => {
   const typographyMap = {
     large: Body1,
+    fullWidth: Body1,
     medium: Body2,
   };
 
@@ -25,7 +26,6 @@ const Button = (props: ButtonProps) => {
     variant,
     color,
     rounded,
-    isFullWidth,
     disabled,
     className,
     ...rest
@@ -38,7 +38,6 @@ const Button = (props: ButtonProps) => {
       className={cn(
         ButtonVariants({ size, variant, disabled, color }),
         rounded && "rounded-full",
-        isFullWidth && "w-full",
         className,
       )}
       disabled={disabled}

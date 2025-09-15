@@ -31,6 +31,9 @@
   --color-primary800: #00497d;
   --color-primary900: #003454;
 
+  --color-focused: #0066ff;
+  --color-disabled: #e6e6e6;
+
   --color-alert: #f84a4a;
 
   --font-sans: var(--font-geist-sans);

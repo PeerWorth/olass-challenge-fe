@@ -8,7 +8,7 @@ import { cn } from "@/shared/utils";
 import { Body1 } from "../typography/Body";
 import { Caption1 } from "../typography/Caption";
 import { Label1 } from "../typography/Label";
-import { ContainerVariants } from "./InputVariants";
+import { CaptionVariants, ContainerVariants } from "./InputVariants";
 import InputProps from "./type";
 
 const Input = (props: InputProps) => {
@@ -18,6 +18,7 @@ const Input = (props: InputProps) => {
     caption,
     unit,
     disabled,
+    error = false,
     placeholder = "텍스트를 입력해주세요",
     onClickReset,
     ...rest
@@ -31,7 +32,7 @@ const Input = (props: InputProps) => {
     <div className="flex flex-col gap-y-2">
       {title && <Label1 className="font-semibold">{title}</Label1>}
       <div className="flex items-center gap-x-2.5">
-        <div className={cn(ContainerVariants({ isFocused, disabled }))}>
+        <div className={cn(ContainerVariants({ isFocused, disabled, error }))}>
           <input
             className={cn("flex flex-1 focus:outline-none", className)}
             disabled={disabled}
@@ -45,7 +46,7 @@ const Input = (props: InputProps) => {
         {unit && <Body1 className="font-medium">{unit}</Body1>}
       </div>
       {caption && (
-        <Caption1 className="text-coolNeutral400 font-normal">
+        <Caption1 className={cn(CaptionVariants({ error }))}>
           {caption}
         </Caption1>
       )}

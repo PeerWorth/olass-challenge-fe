@@ -28,7 +28,7 @@ const Input = (props: InputProps) => {
   const handleIsFocused = () => setIsFocused(!isFocused);
 
   return (
-    <div className="flex w-[335px] flex-col gap-y-2">
+    <div className="flex flex-col gap-y-2">
       {title && <Label1 className="font-semibold">{title}</Label1>}
       <div className="flex items-center gap-x-2.5">
         <div className={cn(ContainerVariants({ isFocused, disabled }))}>

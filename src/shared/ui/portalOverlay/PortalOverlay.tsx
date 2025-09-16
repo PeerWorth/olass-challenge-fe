@@ -14,10 +14,7 @@ const PortalOverlay = ({
 }: PortalOverlayProps) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    onClose?.();
-  };
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => onClose?.();
 
   useEffect(() => {
     const element = document.getElementById("portal-overlay");
@@ -36,7 +33,9 @@ const PortalOverlay = ({
       className={cn("bg-overlay absolute h-full w-full", className)}
       onClick={handleClick}
     >
-      {children}
+      <div className="w-full" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
     </div>,
     portalElement,
   );

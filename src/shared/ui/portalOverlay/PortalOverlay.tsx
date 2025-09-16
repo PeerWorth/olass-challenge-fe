@@ -13,6 +13,11 @@ const PortalOverlay = ({ children, className }: PortalOverlayProps) => {
   useEffect(() => {
     const element = document.getElementById("portal-overlay");
     setPortalElement(element);
+
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, []);
 
   if (!portalElement) return null;

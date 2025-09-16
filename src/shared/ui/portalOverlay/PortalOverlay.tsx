@@ -14,7 +14,7 @@ const PortalOverlay = ({
 }: PortalOverlayProps) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => onClose?.();
+  const handleClick = () => onClose?.();
 
   useEffect(() => {
     const element = document.getElementById("portal-overlay");

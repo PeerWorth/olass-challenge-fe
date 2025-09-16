@@ -1,6 +1,6 @@
 "use client";
 
-import useBottomSheetStore from "@/shared/stores/useBottomSheetStore";
+import { useBottomSheetStore } from "@/shared/stores";
 import { BottomSheet } from "@/shared/ui/bottomSheet";
 
 const ModalProvider = ({ children }: { children: React.ReactNode }) => {

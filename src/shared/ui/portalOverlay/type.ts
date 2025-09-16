@@ -1,5 +1,5 @@
 interface PortalOverlayProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
+  onClose?: () => void;
 }
 
 export default PortalOverlayProps;

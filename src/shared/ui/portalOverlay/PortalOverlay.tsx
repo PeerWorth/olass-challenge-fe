@@ -7,8 +7,17 @@ import { cn } from "@/shared/utils";
 
 import PortalOverlayProps from "./type";
 
-const PortalOverlay = ({ children, className }: PortalOverlayProps) => {
+const PortalOverlay = ({
+  children,
+  className,
+  onClose,
+}: PortalOverlayProps) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
+
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    onClose?.();
+  };
 
   useEffect(() => {
     const element = document.getElementById("portal-overlay");
@@ -23,7 +32,10 @@ const PortalOverlay = ({ children, className }: PortalOverlayProps) => {
   if (!portalElement) return null;
 
   return createPortal(
-    <div className={cn("bg-overlay absolute h-full w-full", className)}>
+    <div
+      className={cn("bg-overlay absolute h-full w-full", className)}
+      onClick={handleClick}
+    >
       {children}
     </div>,
     portalElement,

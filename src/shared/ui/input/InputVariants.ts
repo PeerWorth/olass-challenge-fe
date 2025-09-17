@@ -9,6 +9,7 @@ export const ContainerVariants = cva(
     "rounded-xl",
     "border",
     "p-3",
+    "bg-common100",
   ],
   {
     variants: {

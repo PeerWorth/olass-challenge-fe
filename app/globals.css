@@ -35,6 +35,7 @@
   --color-disabled: #e6e6e6;
 
   --color-alert: #f84a4a;
+  --color-overlay: #17171785;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

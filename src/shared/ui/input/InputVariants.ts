@@ -14,6 +14,7 @@ export const ContainerVariants = cva(
     variants: {
       isFocused: { true: ["border-focused"] },
       disabled: { true: ["bg-disabled"] },
+      error: { true: ["border-alert"] },
     },
   },
 );
@@ -21,5 +22,11 @@ export const ContainerVariants = cva(
 export const InputVariants = cva("", {
   variants: {
     disabled: { trie: ["placeholder-coolNeutral100"] },
+  },
+});
+
+export const CaptionVariants = cva("text-coolNeutral400 font-normal", {
+  variants: {
+    error: { true: ["text-alert"] },
   },
 });

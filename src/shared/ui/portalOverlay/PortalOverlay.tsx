@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
+import { useDeviceType } from "@/shared/hooks";
 import { cn } from "@/shared/utils";
 
+import OverlayVariants from "./OverlayVariants";
 import PortalOverlayProps from "./type";
 
 const PortalOverlay = ({
@@ -13,7 +15,7 @@ const PortalOverlay = ({
   onClose,
 }: PortalOverlayProps) => {
   const [portalElement, setPortalElement] = useState<HTMLElement | null>(null);
-
+  const deviceType = useDeviceType();
   const handleClick = () => onClose?.();
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const PortalOverlay = ({
 
   return createPortal(
     <div
-      className={cn("bg-overlay absolute h-full w-full", className)}
+      className={cn(OverlayVariants({ deviceType }), className)}
       onClick={handleClick}
     >
       <div className="w-full" onClick={(e) => e.stopPropagation()}>

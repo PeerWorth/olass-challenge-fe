@@ -1,0 +1,1 @@
+export { default as LogoHorizontal } from "./logo-horizontal.png";

@@ -11,7 +11,7 @@ const HeaderProvider = ({ children }: { children: React.ReactNode }) => {
 
   const routeConfig = ROUTE_CONFIG[pathname];
   return (
-    <div className="flex h-full flex-col gap-y-1">
+    <>
       {routeConfig?.showHeader && (
         <Header
           showShareButton={routeConfig?.showShareButton}
@@ -19,8 +19,8 @@ const HeaderProvider = ({ children }: { children: React.ReactNode }) => {
           backgroundColor={routeConfig?.backgroundColor}
         />
       )}
-      {children}
-    </div>
+      <div className="flex h-full flex-col">{children}</div>
+    </>
   );
 };
 

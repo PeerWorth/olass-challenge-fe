@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-const ScreenVariants = cva(["overflow-auto"], {
+const ScreenVariants = cva(["overflow-y-auto"], {
   variants: {
     deviceType: {
       desktop: [

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-import { useBottomSheet } from "@/shared/hooks";
 import { Button } from "@/shared/ui/button";
 
 import { LANDING_SECTION_CONTENT } from "../model/constants";
@@ -14,11 +13,6 @@ import ImageMobile from "./images/mobile-image.png";
 import ImageSavedMoney from "./images/saved-money.png";
 
 const LandingPage = () => {
-  const { handleOpen } = useBottomSheet();
-  const handleClick = () => {
-    handleOpen(<div className="h-50">BottomSheet</div>);
-  };
-
   return (
     <>
       <div className="flex-1 pb-12">
@@ -74,7 +68,6 @@ const LandingPage = () => {
           color="primary"
           text="로그인하고 절약 챌린지 참여하기"
           rounded
-          onClick={handleClick}
         />
       </div>
     </>

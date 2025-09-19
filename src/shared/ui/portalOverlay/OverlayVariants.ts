@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 const OverlayVariants = cva(
-  ["bg-overlay", "absolute", "h-full", "w-full", "m-auto"],
+  ["bg-overlay", "absolute", "h-full", "w-full", "m-auto", "z-overlay"],
   {
     variants: {
       deviceType: {

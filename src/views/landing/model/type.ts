@@ -1,7 +1,21 @@
 interface SectionLayoutProps {
   title: string;
   description: string;
-  content?: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export type { SectionLayoutProps };
+type ToastMoneyType = {
+  contentType: "money";
+  nickname: string;
+  amount: number;
+};
+
+type ToastBadgeType = {
+  contentType: "badge";
+  nickName: string;
+  badgeName: string;
+};
+
+type ToastProps = ToastMoneyType | ToastBadgeType;
+
+export type { SectionLayoutProps, ToastProps };

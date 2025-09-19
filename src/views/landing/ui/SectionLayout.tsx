@@ -4,7 +4,7 @@ import { Heading2 } from "@/shared/ui/typography/Heading";
 import { SectionLayoutProps } from "../model/type";
 
 const SectionLayout = (props: SectionLayoutProps) => {
-  const { title, description, content } = props;
+  const { title, description, children } = props;
 
   return (
     <div className="flex flex-col gap-y-6 pt-8">
@@ -14,7 +14,7 @@ const SectionLayout = (props: SectionLayoutProps) => {
           {description}
         </Body1>
       </div>
-      {content}
+      {children}
     </div>
   );
 };

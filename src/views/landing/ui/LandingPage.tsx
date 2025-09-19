@@ -1,33 +1,50 @@
 import { Button } from "@/shared/ui/button";
-import { Input } from "@/shared/ui/input";
-import { Body1 } from "@/shared/ui/typography/Body";
-import { Title2 } from "@/shared/ui/typography/Title";
 
+import { LANDING_SECTION_CONTENT } from "../model/constants";
+import ChallengeCard from "./ChallengeCard";
+import SectionLayout from "./SectionLayout";
+import Title from "./Title";
 import Toast from "./Toast";
 
 const LandingPage = () => {
   return (
     <>
-      <div className="h-full" style={{ border: "1px solid red" }}>
+      <div className="pb-10">
         <div className="flex-1">
           <Toast />
 
-          <div className="mt-[33px] flex flex-col gap-y-1">
-            <Title2 className="text-center whitespace-pre-line">{`지금, 돈 아끼는 챌린지\n시작하기!`}</Title2>
-            <Body1 className="bg-linear-to-r from-[#4287FF] to-[#4CA0AA] bg-clip-text text-center font-semibold text-transparent">
-              이미 12,338명이 절약 중
-            </Body1>
+          <Title />
+          <div className="flex flex-col gap-y-5">
+            <SectionLayout
+              title={LANDING_SECTION_CONTENT.others.title}
+              description={LANDING_SECTION_CONTENT.others.description}
+              content={
+                <div className="scrollbar-hide flex gap-x-3 overflow-x-scroll px-4">
+                  <ChallengeCard />
+                  <ChallengeCard />
+                  <ChallengeCard />
+                </div>
+              }
+            />
+            <SectionLayout
+              title={LANDING_SECTION_CONTENT.together.title}
+              description={LANDING_SECTION_CONTENT.together.description}
+            />
+            <SectionLayout
+              title={LANDING_SECTION_CONTENT.now.title}
+              description={LANDING_SECTION_CONTENT.now.description}
+            />
           </div>
         </div>
-        {/* <div className="sticky bottom-5 px-5">
-          <Button
-            variant="solid"
-            size="fullWidth"
-            color="primary"
-            text="로그인하고 절약 챌린지 참여하기"
-            rounded
-          />
-        </div> */}
+      </div>
+      <div className="sticky bottom-5 px-5">
+        <Button
+          variant="solid"
+          size="fullWidth"
+          color="primary"
+          text="로그인하고 절약 챌린지 참여하기"
+          rounded
+        />
       </div>
     </>
   );

@@ -2,11 +2,12 @@
 
 import { useRouter } from "next/navigation";
 
+import { ROUTE_PATH } from "@/shared/constants";
 import { Button } from "@/shared/ui/button";
 
 const LoginButton = () => {
   const route = useRouter();
-  const handleClickLogin = () => route.push("/login");
+  const handleClickLogin = () => route.push(ROUTE_PATH.LOGIN);
 
   return (
     <Button

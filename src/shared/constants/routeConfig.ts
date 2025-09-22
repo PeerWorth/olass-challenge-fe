@@ -7,7 +7,9 @@ interface RouteConfig {
 
 export type HeaderBackgroundColor = "white" | "transparent" | string;
 
-export const ROUTE_CONFIG: Record<string, RouteConfig> = {
+type RoutePathValue = (typeof ROUTE_PATH)[keyof typeof ROUTE_PATH];
+
+export const ROUTE_CONFIG: Record<RoutePathValue, RouteConfig> = {
   "/": { showHeader: true },
   "/landing": {
     showHeader: true,
@@ -18,4 +20,10 @@ export const ROUTE_CONFIG: Record<string, RouteConfig> = {
     showHeader: true,
     backgroundColor: "login-background",
   },
+};
+
+export const ROUTE_PATH = {
+  HOME: "/",
+  LANDING: "/landing",
+  LOGIN: "/login",
 };

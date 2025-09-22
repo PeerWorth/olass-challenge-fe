@@ -19,7 +19,7 @@ const HeaderProvider = ({ children }: { children: React.ReactNode }) => {
           backgroundColor={routeConfig?.backgroundColor}
         />
       )}
-      <div className="flex h-full flex-col">{children}</div>
+      <div className="flex flex-1 flex-col">{children}</div>
     </>
   );
 };

@@ -30,8 +30,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppProviders>{children}</AppProviders>
         <div id="portal-overlay" />
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

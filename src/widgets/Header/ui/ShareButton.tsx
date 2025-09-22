@@ -1,6 +1,5 @@
-import { IconShare } from "@/views/landing/ui/icons";
-
 import shareContent from "../lib/shareContent";
+import { IconShare } from "./icons";
 
 const ShareButton = () => {
   return (

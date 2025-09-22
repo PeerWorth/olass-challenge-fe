@@ -4,6 +4,14 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@layer utilities {
+  .scrollbar-hide {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+  }
+}
 
 @theme inline {
   --color-common100: #fff;
@@ -39,6 +47,8 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --z-index-overlay: 10;
 }
 
 @media (prefers-color-scheme: dark) {

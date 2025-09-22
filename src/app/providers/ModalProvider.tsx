@@ -4,13 +4,12 @@ import { useBottomSheetStore } from "@/shared/stores";
 import { BottomSheet } from "@/shared/ui/bottomSheet";
 
 const ModalProvider = ({ children }: { children: React.ReactNode }) => {
-  const bottomSheetStore = useBottomSheetStore();
+  const { isOpen, content } = useBottomSheetStore();
+
   return (
     <>
       {children}
-      {bottomSheetStore.isOpen && (
-        <BottomSheet>{bottomSheetStore.content}</BottomSheet>
-      )}
+      {isOpen && <BottomSheet>{content}</BottomSheet>}
     </>
   );
 };

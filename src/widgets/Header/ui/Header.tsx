@@ -12,9 +12,7 @@ const Header = ({
 }: HeaderProps) => {
   return (
     <div
-      className={`sticky top-0 flex items-center justify-between px-5 py-3.5 ${
-        backgroundColor === "white" ? "bg-white" : "bg-transparent"
-      }`}
+      className={`sticky top-0 flex items-center justify-between px-5 py-3.5 bg-${backgroundColor}`}
     >
       <Image
         width={72}

@@ -5,7 +5,7 @@ interface RouteConfig {
   backgroundColor?: HeaderBackgroundColor;
 }
 
-export type HeaderBackgroundColor = "white" | "transparent";
+export type HeaderBackgroundColor = "white" | "transparent" | string;
 
 export const ROUTE_CONFIG: Record<string, RouteConfig> = {
   "/": { showHeader: true },
@@ -13,5 +13,9 @@ export const ROUTE_CONFIG: Record<string, RouteConfig> = {
     showHeader: true,
     showShareButton: true,
     backgroundColor: "white",
+  },
+  "/login": {
+    showHeader: true,
+    backgroundColor: "login-background",
   },
 };

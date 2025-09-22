@@ -1,9 +1,8 @@
 import Image from "next/image";
 
-import { Button } from "@/shared/ui/button";
-
 import { LANDING_SECTION_CONTENT } from "../model/constants";
 import ChallengeCard from "./ChallengeCard";
+import LoginButton from "./LoginButton";
 import SectionLayout from "./SectionLayout";
 import Title from "./Title";
 import Toast from "./Toast";
@@ -13,7 +12,7 @@ import ImageSavedMoney from "./images/saved-money.png";
 const LandingPage = () => {
   return (
     <>
-      <div className="flex-1 pb-12">
+      <div className="pb-12">
         <Toast contentType="money" nickname="올*님" amount={50000} />
 
         <Title />
@@ -60,13 +59,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="sticky bottom-5 px-5">
-        <Button
-          variant="solid"
-          size="fullWidth"
-          color="primary"
-          text="로그인하고 절약 챌린지 참여하기"
-          rounded
-        />
+        <LoginButton />
       </div>
     </>
   );

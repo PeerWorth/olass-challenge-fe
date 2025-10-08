@@ -10,7 +10,7 @@ const Title = () => {
           이미 12,338명이 절약 중
         </Body1>
       </div>
-      <div className="from-common100 h-[260px] bg-linear-to-b to-[#F6EEFF]"></div>
+      <div className="from-common100 h-[260px] bg-linear-to-b to-[#E7FFFF]"></div>
     </div>
   );
 };

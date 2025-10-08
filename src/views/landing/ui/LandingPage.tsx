@@ -32,21 +32,18 @@ const LandingPage = () => {
             title={LANDING_SECTION_CONTENT.together.title}
             description={LANDING_SECTION_CONTENT.together.description}
           >
-            <div className="bg-coolNeutral25 mx-4 rounded-3xl">
+            <div className="bg-coolNeutral25 mx-4 rounded-3xl pt-4">
               <Image
                 className="mx-auto"
                 src={ImageMobile.src}
                 alt="mobileImg"
-                width={343}
+                width={222}
                 height={258}
               />
             </div>
           </SectionLayout>
 
-          <SectionLayout
-            title={LANDING_SECTION_CONTENT.now.title}
-            description={LANDING_SECTION_CONTENT.now.description}
-          >
+          <SectionLayout title={LANDING_SECTION_CONTENT.now.title}>
             <div className="mx-4 flex justify-center rounded-3xl bg-[#E7F3FF] py-[18px]">
               <Image
                 src={ImageSavedMoney.src}

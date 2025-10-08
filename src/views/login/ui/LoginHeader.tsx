@@ -22,6 +22,7 @@ const LoginHeader = () => {
         alt="dart"
         width={DART_IMAGE_SIZE}
         height={DART_IMAGE_SIZE}
+        priority
       />
     </div>
   );

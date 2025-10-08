@@ -22,11 +22,12 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+
   async rewrites() {
     return [
       {
-        source: "/api/:path*",
-        destination: "https://api.example.com/:path*",
+        source: "/api/auth/v1/:path*",
+        destination: `${process.env.NEXT_PUBLIC_API_URL}/api/auth/v1/:path*`,
       },
     ];
   },

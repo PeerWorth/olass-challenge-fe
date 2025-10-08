@@ -5,14 +5,7 @@ const OverlayVariants = cva(
   {
     variants: {
       deviceType: {
-        desktop: [
-          "fixed",
-          "inset-0",
-          "w-[375px]",
-          "h-[812px]",
-          "m-auto",
-          "z-10",
-        ],
+        desktop: ["fixed", "inset-0", "w-[375px]", "h-[812px]", "m-auto"],
         mobile: ["w-dvw", "h-dvh"],
       },
     },

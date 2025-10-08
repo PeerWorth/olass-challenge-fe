@@ -1,6 +1,6 @@
 interface SectionLayoutProps {
   title: string;
-  description: string;
+  description?: string;
   children: React.ReactNode;
 }
 

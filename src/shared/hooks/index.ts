@@ -2,3 +2,4 @@ export { default as useInputObjectChange } from "./useInputObjectChange";
 export { default as useInputChange } from "./useInputChange";
 export { default as useBottomSheet } from "./useBottomSheet";
 export { default as useDeviceType } from "./useDeviceType";
+export { default as useStep } from "./useStep";

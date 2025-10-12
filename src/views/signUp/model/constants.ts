@@ -2,7 +2,7 @@ import { NicknameErrorType, SignUpState } from "./types";
 
 export const STEP_TITLE: Record<keyof SignUpState, string> = {
   nickname: "올라스에서 사용할\n닉네임을 입력해주세요",
-  birthYear: "출생연도를\n알려주세요",
+  birthday: "출생연도를\n알려주세요",
   gender: "성별을\n선택해주세요",
 };
 

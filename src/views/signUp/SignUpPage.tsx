@@ -12,7 +12,7 @@ import PreviousButton from "./ui/PreviousButton";
 
 const INITIAL_VALUE: SignUpState = {
   nickname: "",
-  birthYear: "",
+  birthday: "",
   gender: "",
 };
 
@@ -45,7 +45,7 @@ const SignUpPage = () => {
         onClickReset={resetValue}
       />
     ),
-    birthYear: (
+    birthday: (
       <BirthYear
         goNext={goNext}
         step={value}

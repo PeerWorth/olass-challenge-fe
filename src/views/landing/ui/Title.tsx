@@ -1,5 +1,9 @@
+import Image from "next/image";
+
 import { Body1 } from "@/shared/ui/typography/Body";
 import { Title2 } from "@/shared/ui/typography/Title";
+
+import ImageTitle from "./images/title-image.png";
 
 const Title = () => {
   return (
@@ -12,7 +16,15 @@ const Title = () => {
           이미 12,338명이 절약 중
         </Body1>
       </div>
-      <div className="from-common100 h-[260px] bg-linear-to-b to-[#E7FFFF]"></div>
+      <div className="from-common100 h-[260px] bg-linear-to-b to-[#E7FFFF]">
+        <Image
+          src={ImageTitle.src}
+          alt="title"
+          width={260}
+          height={260}
+          className="m-auto mt-4"
+        />
+      </div>
     </div>
   );
 };

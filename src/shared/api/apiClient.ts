@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/nextjs";
 import axios, { AxiosError } from "axios";
 
 const apiClient = axios.create({
@@ -23,7 +24,16 @@ apiClient.interceptors.response.use(
   },
   (error: AxiosError) => {
     console.log(error);
+    Sentry.captureException(error);
 
+    // if (
+    //   error.response &&
+    //   error.response.status >= 500 &&
+    //   error.response.status < 600
+    // ) {
+    //   // 5xx 에러만 Sentry로 전송
+    //   Sentry.captureException(error);
+    // }
     // if (error.response?.code === 401) {
     //   localStorage.removeItem("token");
     //   window.location.href = "/login";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useInputObjectChange, useStep } from "@/shared/hooks";
-import { Button } from "@/shared/ui/button";
+// import { Button } from "@/shared/ui/button";
 import { ProgressBar } from "@/shared/ui/progressBar";
 
 import { SignUpState } from "./model/types";

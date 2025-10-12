@@ -1,14 +1,14 @@
 "use client";
 
-import { useMutation, useQuery } from "@tanstack/react-query";
+// import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-import { authQueries } from "@/shared/api/queryFactory/auth";
+// import { authQueries } from "@/shared/api/queryFactory/auth";
 import { ROUTE_PATH } from "@/shared/constants";
 import { Loader } from "@/shared/ui/loader";
-import { PortalOverlay } from "@/shared/ui/portalOverlay";
+// import { PortalOverlay } from "@/shared/ui/portalOverlay";
 
 const AuthPage = () => {
   const queryString = useSearchParams();

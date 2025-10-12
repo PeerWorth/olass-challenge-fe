@@ -4,7 +4,7 @@ export interface SignUpLayoutProps {
 
 export interface SignUpState {
   nickname: string;
-  birthYear: string;
+  birthday: string;
   gender: string;
 }
 

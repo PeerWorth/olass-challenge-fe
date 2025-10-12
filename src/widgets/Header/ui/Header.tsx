@@ -11,7 +11,7 @@ import ShareButton from "./ShareButton";
 
 const Header = ({
   showShareButton,
-  showProfileButton,
+  // showProfileButton,
   backgroundColor = "transparent",
 }: HeaderProps) => {
   const router = useRouter();

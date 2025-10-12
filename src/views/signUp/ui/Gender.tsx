@@ -47,7 +47,7 @@ const Gender = (props: SignUpStepProps) => {
         className="rounded-[12px] py-3"
         size="fullWidth"
         text="완료"
-        disabled={!step.birthYear}
+        disabled={!step.birthday}
         onClick={goNext}
       />
     </div>

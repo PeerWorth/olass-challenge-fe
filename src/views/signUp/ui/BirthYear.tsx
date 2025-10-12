@@ -12,12 +12,12 @@ const BirthYear = (props: SignUpStepProps) => {
     <div className="flex flex-1 flex-col justify-between">
       <div className="flex flex-col gap-y-11">
         <Heading1 className="whitespace-pre-line">
-          {STEP_TITLE.birthYear}
+          {STEP_TITLE.birthday}
         </Heading1>
         <Input
           type="number"
-          value={step.birthYear}
-          onChange={(e) => handleChange(e, "birthYear")}
+          value={step.birthday}
+          onChange={(e) => handleChange(e, "birthday")}
           onClickReset={onClickReset}
           unit='년도'
         />
@@ -27,7 +27,7 @@ const BirthYear = (props: SignUpStepProps) => {
         className="rounded-[12px] py-3"
         size="fullWidth"
         text="다음"
-        disabled={!step.birthYear}
+        disabled={!step.birthday}
         onClick={goNext}
       />
     </div>

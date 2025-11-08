@@ -9,8 +9,8 @@ const KakaoProvider = () => {
 
   return (
     <Script
-      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.8/kakao.min.js"
-      integrity={process.env.NEXT_PUBLIC_KAKAO_INTEGRITY_VALUE}
+      src={`https://t1.kakaocdn.net/kakao_js_sdk/${process.env.NEXT_PUBLIC_KAKAO_SDK_VERSION}/kakao.min.js`}
+      integrity={process.env.NEXT_PUBLIC_KAKAO_INTERGRITY_KEY}
       onLoad={handleKakaoInit}
       crossOrigin="anonymous"
     />

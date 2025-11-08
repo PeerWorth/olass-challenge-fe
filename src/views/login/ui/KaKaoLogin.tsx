@@ -8,7 +8,7 @@ import KakaoLogo from "./icons/kakao-logo.svg";
 const KaKaoLogin = () => {
   const handleKakaoLogin = () => {
     window.Kakao.Auth.authorize({
-      redirectUri: `http://localhost:3000${ROUTE_PATH.LOGIN_KAKAO}`,
+      redirectUri: `${process.env.NEXT_PUBLIC_APP_URL}${ROUTE_PATH.LOGIN_KAKAO}`,
     });
   };
 

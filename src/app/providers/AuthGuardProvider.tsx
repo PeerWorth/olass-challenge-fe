@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 import { ROUTE_PATH } from "@/shared/constants/routeConfig";
+import useAuth from "@/shared/hooks/useAuth";
 
 interface AuthGuardProps {
   children: React.ReactNode;
@@ -20,17 +21,15 @@ const PUBLIC_ROUTES = [
 const AuthGuardProvider = ({ children }: AuthGuardProps) => {
   const router = useRouter();
   const pathname = usePathname();
+  const { checkIsAuthorized } = useAuth();
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const token = localStorage.getItem("token");
     const isPublicRoute = PUBLIC_ROUTES.includes(pathname);
 
-    if (!token && !isPublicRoute) {
+    if (!checkIsAuthorized() && !isPublicRoute) {
       router.replace(ROUTE_PATH.LANDING);
     }
-  }, [router, pathname]);
+  }, [checkIsAuthorized, router, pathname]);
 
   return <>{children}</>;
 };

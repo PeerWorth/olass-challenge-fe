@@ -1,6 +1,5 @@
 import { Screen } from "@/shared/ui/screen";
 
-import AuthGuardProvider from "./AuthGuardProvider";
 import HeaderProvider from "./HeaderProvider";
 import KakaoProvider from "./KakaoProvider";
 import ModalProvider from "./ModalProvider";
@@ -11,11 +10,11 @@ const AppProviders = ({ children }: { children: React.ReactNode }) => {
     <QueryProvider>
       <KakaoProvider />
       <Screen>
-        <ModalProvider>
-          <HeaderProvider>
-            <AuthGuardProvider>{children}</AuthGuardProvider>
-          </HeaderProvider>
-        </ModalProvider>
+          <ModalProvider>
+            <HeaderProvider>
+              {children}
+            </HeaderProvider>
+          </ModalProvider>
       </Screen>
     </QueryProvider>
   );

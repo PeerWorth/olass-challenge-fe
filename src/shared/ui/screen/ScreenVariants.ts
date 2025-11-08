@@ -10,7 +10,7 @@ const ScreenVariants = cva(["overflow-y-auto", "flex", "flex-col"], {
         "inset-0",
         "m-auto",
         "border",
-        "border-black",
+        "border-gray-300",
       ],
       mobile: ["w-dvw", "h-dvh"],
     },

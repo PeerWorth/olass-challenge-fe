@@ -5,14 +5,11 @@ import next from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    turbo: {
-      rules: {
-        "*.svg": {
-          loaders: ["@svgr/webpack"],
-          as: "*.js",
-        },
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
       },
     },
   },
@@ -26,12 +23,16 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
-    return [
-      {
+    const rewrites = [];
+
+    if (process.env.NEXT_PUBLIC_API_URL) {
+      rewrites.push({
         source: "/api/auth/v1/:path*",
         destination: `${process.env.NEXT_PUBLIC_API_URL}/api/auth/v1/:path*`,
-      },
-    ];
+      });
+    }
+
+    return rewrites;
   },
 };
 

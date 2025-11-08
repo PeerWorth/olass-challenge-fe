@@ -1,4 +1,3 @@
-import { DialogProvider } from "@/shared/contexts/DialogContext";
 import { Screen } from "@/shared/ui/screen";
 
 import HeaderProvider from "./HeaderProvider";
@@ -11,13 +10,11 @@ const AppProviders = ({ children }: { children: React.ReactNode }) => {
     <QueryProvider>
       <KakaoProvider />
       <Screen>
-        <DialogProvider>
           <ModalProvider>
             <HeaderProvider>
               {children}
             </HeaderProvider>
           </ModalProvider>
-        </DialogProvider>
       </Screen>
     </QueryProvider>
   );
